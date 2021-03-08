@@ -1,0 +1,10 @@
+include ':app'
+rootProject.name = "FlutterIntegration"
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'be_chat/.android/include_flutter.groovy'
+))
+include ':be_chat'
+project(':be_chat').projectDir = new File('../be_chat')
